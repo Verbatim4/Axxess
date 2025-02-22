@@ -1,5 +1,8 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO
 
-print("hello hi")
-print ("hi")
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
