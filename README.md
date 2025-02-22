@@ -10,6 +10,6 @@ crtl + shift + p \
 `Python 3.13.2 64-bit`
 
 After installation: \
-Open new terminal: ctrl + ` \
+Open new terminal: ctrl + \` \
 `python -m pip install --upgrade pip` \
 `pip install -r requirements.txt` \
