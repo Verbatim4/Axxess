@@ -1,6 +1,6 @@
 # Axxess Hackathon
 
-Download python 1.13.2 from [python.org](http://python.org) \
+Download python 3.13.2 from [python.org](http://python.org) \
 Click "Add to path" during installation
 
 Create venv in vscode \
