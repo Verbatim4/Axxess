@@ -29,7 +29,7 @@ def update_key(user_data, id):
 
 def start_polling(user_data):
     scheduler = BackgroundScheduler()
-    scheduler.add_job(func=search, args=[user_data], trigger='interval', seconds=10)
+    scheduler.add_job(func=search, args=[user_data], trigger='interval', seconds=60)
     scheduler.start()
     atexit.register(lambda: scheduler.shutdown())
 

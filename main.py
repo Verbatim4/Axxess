@@ -40,7 +40,7 @@ def update():
     return render_template('update.html')
 
 
-@app.route('/patient/<key>')
+@app.route('/patient/<key>/')
 def patient(key):
     if not key:
         return render_template('patient_error.html')
