@@ -1,6 +1,6 @@
-from flask import Flask, render_template
-# from db import user_data
-# from poll_data import start_polling
+from flask import Flask, render_template, request
+from db import user_data
+from poll_data import start_polling
 
 app = Flask(__name__)
 
@@ -27,7 +27,13 @@ def setup():
 
 @app.route('/dashboard/')
 def dashboard():
-    return render_template('dashboard.html')
+    user = user_data.find_one({"patient_key": "imp_user"})
+    return render_template(
+        'dashboard.html', 
+        logs=user['health_log'], 
+        food=user['food_info'],
+        name=user['patient_name'],
+    )
 
 
 @app.route('/profile/')
@@ -52,7 +58,7 @@ def patient(key):
 
     return render_template('patient_error.html')
 
-
+    
 if __name__ == "__main__":
     # start_polling(user_data)
     app.run(debug=True, port=1234, use_reloader=False)
