@@ -39,5 +39,10 @@ def update():
     return render_template('update.html')
 
 
+@app.route('/patient/')
+def patient():
+    return render_template('patient_error.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=1234)
