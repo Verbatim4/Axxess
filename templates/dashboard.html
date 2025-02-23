@@ -164,19 +164,13 @@
     <h1><i style = font-size:50px; ></i> GardenAid Dashboard</h1>
     <p class="text-center" style="font-size:25px;"> -Welcome Back!-</p>
     <p class="text-center" style="font-size:15px; color: #715020"> Grow with GardenAid!</p>
-    <p class="text-sm-center">TIME: 00:00 DATE: MM/DD/YYYY.</p>
+    <p class="text-sm-center">TIME: 2:30 PM DATE: 02/23/2025.</p>
   </div>
 
   <!-- Profile and Notifications Buttons -->
   <div class="container text-start mb-4">
     <button type="button" class="btn custom-btn position-relative me-2">
       Profile
-    </button>
-    <button type="button" class="btn custom-btn position-relative">
-      Notifications
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        5
-      </span>
     </button>
   </div>
 
@@ -195,74 +189,60 @@
         </tr>
       </thead>
       <tbody>
+        {% for log in logs %}
         <tr>
-          <td>02/22/2025</td>
-          <td>10:30 AM</td>
-          <td>Take Medicine</td>
-          <td>Daily vitamin</td>
+          <td>{{ log[0] }}</td>
+          <td>{{ log[1] }}</td>
+          <td>{{ log[2] }}</td>
+          <td>{{ log[3] }}</td>
         </tr>
-        <tr>
-          <td>02/22/2025</td>
-          <td>12:00 PM</td>
-          <td>Hydration</td>
-          <td>Drank 2 glasses of water</td>
-        </tr>
-        <tr>
-          <td>02/22/2025</td>
-          <td>06:00 PM</td>
-          <td>Exercise</td>
-          <td>30-minute walk</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
-    <button class="add-entry-btn"><i class="fa-solid fa-plus"></i> Add Entry</button>
-  </div>
-
-  <div class="container" style="max-width: 90%; margin: 20px auto;">
-    <button class="custom-btn"><i class="fa-solid fa-check-square rounded-pill"></i> Finish Day Log</button>
-  </div>
-
-  <!--To Do tasks!-->
-  <div class="container" style="max-width: 90%; margin: 20px auto;">
-    <!-- Remove the row and col classes or use full-width col-12 -->
-    <!-- Task Box 1 -->
-    <h1><i class = " fa fa-list" style="font-size:35px;" ></i> To-Do List</h1>
-
-    <div class="d-flex align-items-center tasks-box">
-      <input class="form-check-input custom-checkbox" type="checkbox">
-      <div>
-        <h6 class="mb-2">7:30 PM: Change Medicine Time </h6>
-      </div>
-    </div>
-    <!-- Task Box 2 -->
-    <div class="d-flex align-items-center tasks-box">
-      <input class="form-check-input custom-checkbox" type="checkbox">
-      <div>
-        <h6 class="mb-2">8:45 PM: Check-In on Grandma</h6>
-      </div>
-    </div>
+    <!-- <button class="add-entry-btn"><i class="fa-solid fa-plus"></i> Add Entry</button> -->
   </div>
 
   <div class="container" style="max-width: 90%; margin: 50px auto;">
-    <h1><i class = " fas fa-pencil-alt" style="font-size:35px;" ></i> Change Patient's Reminders</h1>
+    <h1><i class = " fas fa-pencil-alt" style="font-size:35px;" ></i> Change Patient's Schedule</h1>
     <table class="table table-bordered custom-thead">
         <thead class="table-" >
           <tr>
             <th>Task Type</th>
             <th>Time</th>
             <th>Patient</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
+          {% for i in food %}
+          <tr>
+            <td>Eat food</td>
+            <td>{{ i }}</td>
+            <td>{{ name }}</td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td>Take tylenol</td>
+            <td>1:30 PM</td>
+            <td>{{ name }}</td>
+          </tr>
+          <tr>
+            <td>Take allegra</td>
+            <td>7:30 PM</td>
+            <td>{{ name }}</td>
+          </tr>
+          <tr>
+            <td>Take cough syrup</td>
+            <td>7:30 PM</td>
+            <td>{{ name }}</td>
+          </tr>
           <tr>
             <td><input type="text" class="form-control" placeholder="Enter task type"></td>
             <td><input type="time" class="form-control"></td>
             <td><input type="text" class="form-control" placeholder="Enter relative’s name"></td>
-            <td><button class="btn btn-success">Save</button></td>
           </tr>
         </tbody>
       </table>
+      <button class="btn btn-success">Save</button>
     </div>
 
 
@@ -271,35 +251,19 @@
     <h1><i class = " fa fa-phone" style="font-size:35px;" ></i> Contact Info.</h1>
 
     <div class="contact-row d-flex justify-content-between align-items-center py-2 border-bottom">
-        <span class="contact-name fw-bold">John Doe</span>
+        <span class="contact-name fw-bold">Doctor: John Doe</span>
         <p><a href="#" class="link-underline-success">XXX-XXX-XXXX</a></p>
   </div>
 
   <div class="contact-row d-flex justify-content-between align-items-center py-2 border-bottom">
-    <span class="contact-name fw-bold">Jane Doe</span>
+    <span class="contact-name fw-bold">Dentist: Jane Doe</span>
     <p><a href="#" class="link-underline-success">XXX-XXX-XXXX</a></p>
  </div>
 
  <div class="contact-row d-flex justify-content-between align-items-center py-2 border-bottom">
-    <span class="contact-name fw-bold">Sue Doe</span>
+    <span class="contact-name fw-bold">Dermatologist: Sue Doe</span>
     <p><a href="#" class="link-underline-success">XXX-XXX-XXXX</a></p>
  </div>
-
- <div class="container" style="max-width: 90%; margin: 50px auto;">
- <h1><i class = " fa fa-leaf" style="font-size:35px;" ></i> Plant Activity!</h1>
- 
-    <!-- Circular element with plant icon inside -->
-    <div class="dot mb-4 d-flex align-items-center justify-content-center">
-      <i class="fas fa-seedling" style="font-size:100px; color: #029046;"></i>
-    </div>
-
-   
-  </div>
- 
-
- 
-  
-
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

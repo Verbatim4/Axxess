@@ -72,27 +72,27 @@
 
     </style>
 
-    <form style="max-width: 480px;">
+    <form style="max-width: 480px;" action="/dashboard/">
         <h1>Register</h1>
 
         <div class="input-box">
-            <input type="name" class="m-2" placeholder="Full Name" required>
+            <input type="name" class="m-2" placeholder="Full Name" name="name" required>
         </div>
 
         <div class="input-box">
-            <input type="email" class="m-2" placeholder="Email" required>
+            <input type="email" class="m-2" placeholder="Email" name="email" required>
         </div>
 
         <div class="input-box">
-            <input type="phone" class="m-2" placeholder="Phone number" required>
+            <input type="phone" class="m-2" placeholder="Phone number" name="phone" required>
         </div>
 
         <div class="password">
-            <input type="pass" class="m-2" placeholder="Password" required>
+            <input type="pass" class="m-2" placeholder="Password" name="pass" required>
         </div>
 
         <div class="password">
-            <input type="pass" class="m-2" placeholder="Confirm password" required>
+            <input type="pass" class="m-2" placeholder="Confirm password" name="c-pass" required>
         </div>
 
         <button type="submit">Create</button>
