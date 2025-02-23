@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from db import user_data
-from poll_data import start_polling
+# from db import user_data
+# from poll_data import start_polling
 
 app = Flask(__name__)
 
@@ -54,5 +54,5 @@ def patient(key):
 
 
 if __name__ == "__main__":
-    start_polling(user_data)
+    # start_polling(user_data)
     app.run(debug=True, port=1234, use_reloader=False)
