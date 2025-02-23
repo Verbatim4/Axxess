@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from db import *
-from send_message import *
+from db import user_data
+from poll_data import start_polling
 
 app = Flask(__name__)
 
@@ -40,15 +40,19 @@ def update():
     return render_template('update.html')
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/patient/<key>')
+def patient(key):
+    if not key:
+        return render_template('patient_error.html')
+    
+    document = user_data.find_one({"patient_key": key})
+    if document:
+        data = [document['medicine_info'], document['food_info']]
+        return render_template('patient.html', data=data)
 
-
-@app.route('/8af5bb73637059ef/')
-def patient():
-    return render_template('patient.html')
+    return render_template('patient_error.html')
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=1234)
+    start_polling(user_data)
+    app.run(debug=True, port=1234, use_reloader=False)
