@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import db
+# import db
 
 app = Flask(__name__)
 
@@ -8,9 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/login')
-def login():
-    return render_template('auth/login.html')
 
 @app.route('/login/')
 def login():
@@ -40,11 +37,6 @@ def profile():
 @app.route('/update/')
 def update():
     return render_template('update.html')
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
 if __name__ == "__main__":

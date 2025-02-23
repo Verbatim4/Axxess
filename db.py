@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from os import getenv
 load_dotenv()
 
-client = MongoClient(getenv('DB_URI'), server_api=ServerApi('1'))
+client = MongoClient(getenv('DB_URI'))
 
 try:
     client.admin.command('ping')
