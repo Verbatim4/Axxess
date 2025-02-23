@@ -11,7 +11,7 @@
 
 <body style="background-color: #d3f9d8;"> <!-- Light green background for the page -->
     <style>
-        input[type="name"], input[type="email"], input[type="phone"], input[type="pass"]
+        input[type="name"], input[type="email"], input[type="phone"], input[type="password"]
         {
             width: 100%;
             padding-left: 35px; /* Space for the icon */
@@ -19,7 +19,7 @@
 
         }
 
-        input[type="name"]:focus, input[type="email"]:focus, input[type="phone"]:focus, input[type="pass"]:focus
+        input[type="name"]:focus, input[type="email"]:focus, input[type="phone"]:focus, input[type="password"]:focus
         {
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adding focus effect */
         }
@@ -72,27 +72,27 @@
 
     </style>
 
-    <form style="max-width: 480px;" action="/dashboard/">
-        <h1>Register</h1>
+    <form style="max-width: 480px;" action="/login/">
+        <h1>Register for GardenAid</h1>
 
         <div class="input-box">
-            <input type="name" class="m-2" placeholder="Full Name" name="name" required>
+            <input type="name" class="m-2" placeholder="Full Name" name="name" value="John Doe" required>
         </div>
 
         <div class="input-box">
-            <input type="email" class="m-2" placeholder="Email" name="email" required>
+            <input type="email" class="m-2" placeholder="Email" name="email" value="johndoe@gmail.com" required>
         </div>
 
         <div class="input-box">
-            <input type="phone" class="m-2" placeholder="Phone number" name="phone" required>
+            <input type="phone" class="m-2" placeholder="Phone number" name="phone" value="1234567890" required>
         </div>
 
         <div class="password">
-            <input type="pass" class="m-2" placeholder="Password" name="pass" required>
+            <input type="password" class="m-2" placeholder="Password" name="pass" value="password123" required>
         </div>
 
         <div class="password">
-            <input type="pass" class="m-2" placeholder="Confirm password" name="c-pass" required>
+            <input type="password" class="m-2" placeholder="Confirm password" name="c-pass" value="password123" required>
         </div>
 
         <button type="submit">Create</button>

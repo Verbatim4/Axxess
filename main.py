@@ -27,7 +27,7 @@ def setup():
 
 @app.route('/dashboard/')
 def dashboard():
-    user = user_data.find_one({"patient_key": "imp_user"})
+    user = user_data.find_one({"patient_key": "00000000"})
     return render_template(
         'dashboard.html', 
         logs=user['health_log'], 
@@ -46,15 +46,19 @@ def update():
     return render_template('update.html')
 
 
-@app.route('/patient/<key>/')
+@app.route('/patient/')
+def patient_blank():
+    return render_template('patient_error.html')
+
+@app.route('/patient/<key>')
 def patient(key):
     if not key:
         return render_template('patient_error.html')
     
     document = user_data.find_one({"patient_key": key})
     if document:
-        data = [document['medicine_info'], document['food_info']]
-        return render_template('patient.html', data=data)
+        meds = [list(i.keys())[0] for i in document['medicine_info']]
+        return render_template('patient.html', meds=meds, food=document['food_info'])
 
     return render_template('patient_error.html')
 
