@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-# import db
+from db import *
+from send_message import *
 
 app = Flask(__name__)
 
@@ -37,6 +38,16 @@ def profile():
 @app.route('/update/')
 def update():
     return render_template('update.html')
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/8af5bb73637059ef/')
+def patient():
+    return render_template('patient.html')
 
 
 if __name__ == "__main__":
